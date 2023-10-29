@@ -24,7 +24,7 @@ const CoreConcept = ({image,title,description}) => {
 
 
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState('components');
+  const [selectedTopic, setSelectedTopic] = useState('');
 
 
     function handleClick(selectedButton) {
@@ -53,6 +53,7 @@ function App() {
         <TabButton onSelect={() => handleClick("props")} >Props</TabButton>
         <TabButton onSelect={() => handleClick("state")} >State</TabButton>
           </menu>
+          {!selectedTopic ? <p>Please select topic</p>:
           <div id='tab-content'>
             <h3>{EXAMPLES[selectedTopic].title}</h3>
             <p>{EXAMPLES[selectedTopic].description}</p>
@@ -61,9 +62,8 @@ function App() {
                 {EXAMPLES[selectedTopic].code}
               </code>
             </pre>
-          </div>
+          </div>} 
         </section>
-        {selectedTopic}
       </main>
     </div>
   );
