@@ -2,7 +2,7 @@ import { CORE_CONCEPTS } from './assets/data.js';
 import Header from "./components/Header/Header"
 import TabButton from './components/TabButton/TabButton.jsx';
 import { useState } from 'react';
-
+import { EXAMPLES } from './assets/data.js';
 
 
 
@@ -24,7 +24,7 @@ const CoreConcept = ({image,title,description}) => {
 
 
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState('Please click a button');
+  const [selectedTopic, setSelectedTopic] = useState('components');
 
 
     function handleClick(selectedButton) {
@@ -53,9 +53,17 @@ function App() {
         <TabButton onSelect={() => handleClick("props")} >Props</TabButton>
         <TabButton onSelect={() => handleClick("state")} >State</TabButton>
           </menu>
+          <div id='tab-content'>
+            <h3>{EXAMPLES[selectedTopic].title}</h3>
+            <p>{EXAMPLES[selectedTopic].description}</p>
+            <pre>
+              <code>
+                {EXAMPLES[selectedTopic].code}
+              </code>
+            </pre>
+          </div>
         </section>
         {selectedTopic}
-        <h3>HHELLE</h3>
       </main>
     </div>
   );
