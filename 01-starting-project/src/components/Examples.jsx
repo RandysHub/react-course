@@ -3,7 +3,7 @@ import TabButton from './TabButton/TabButton'
 import { useState } from 'react';
 import { EXAMPLES } from '../assets/data';
 import Section from './Section';
-
+import Tabs from './Tabs';
 export default function Examples() {
 
     const [selectedTopic, setSelectedTopic] = useState('');
