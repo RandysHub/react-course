@@ -1,12 +1,11 @@
-import React from 'react'
+import React from "react";
 
-export default function Tabs() {
+export default function Tabs({ children, buttons, ButtonsContainer = "menu" }) {
+  //   const ButtonsContainer = buttonsContainer;
   return (
     <>
-        <menu>
-            
-        </menu>
-        {children}
-  </>
-  )
+      <ButtonsContainer>{buttons}</ButtonsContainer>
+      {children}
+    </>
+  );
 }
